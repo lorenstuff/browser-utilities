@@ -9,4 +9,4 @@ npm install @types/luxon luxon zod @donutteam/utilities
 ```
 
 ## License
-[MIT](https://github.com/donutteam/npm-utilities/blob/main/LICENSE.md)
+[MIT](https://github.com/donutteam/browser-utilities/blob/main/LICENSE.md)
