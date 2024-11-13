@@ -9,6 +9,46 @@ import { z } from "zod";
 //
 
 /**
+ * Clones a template and returns the first child node.
+ * 
+ * @param template The template to clone.
+ * @returns The first child node of the template, or null if the template has no child nodes.
+ */
+export function cloneTemplate<T extends HTMLElement = HTMLElement>(template: HTMLTemplateElement)
+{
+	const clone = template.content.cloneNode(true);
+
+	const firstNode = clone.childNodes[0];
+
+	if (firstNode == null)
+	{
+		return null;
+	}
+
+	return firstNode as T;
+}
+
+/**
+ * Clones a template and returns the first child node.
+ * 
+ * @param template The template to clone.
+ * @returns The first child node of the template.
+ */
+export function cloneTemplateOrThrow<T extends HTMLElement = HTMLElement>(template: HTMLTemplateElement)
+{
+	const clone = template.content.cloneNode(true);
+
+	const firstNode = clone.childNodes[0];
+
+	if (firstNode == null)
+	{
+		throw new Error("No child node in template.");
+	}
+
+	return firstNode as T;
+}
+
+/**
  * Gets boolean data from an element.
  * 
  * @param element The element to get the data from.
