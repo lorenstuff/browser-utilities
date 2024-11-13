@@ -2,6 +2,6 @@
 // Exports
 //
 
-export * as CookieLib from "./libs/Cookie.js";
-export * as ElementLib from "./libs/Element.js";
-export * as PrinterLib from "./libs/Printer.js";
+export * as CookieClientLib from "./libs/Cookie.client.js";
+export * as ElementClientLib from "./libs/Element.client.js";
+export * as PrinterClientLib from "./libs/Printer.client.js";
