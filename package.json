@@ -1,12 +1,12 @@
 {
   "name": "@donutteam/browser-utilities",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A collection of various browser utility functions.",
   "main": "./build/index.js",
   "scripts": {
-	"build": "npx rimraf build && npx tsc",
-	"build:watch": "npx rimraf build && npx tsc --watch",
-	"prepublishOnly": "npm run build"
+    "build": "npx rimraf build && npx tsc",
+    "build:watch": "npx rimraf build && npx tsc --watch",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "utilities",
