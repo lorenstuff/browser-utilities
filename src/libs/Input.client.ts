@@ -31,9 +31,9 @@ export function enableInputs(form: HTMLFormElement)
 	}
 }
 
-export function addInputChangeListeners()
+export function addInputChangeListeners(form: HTMLFormElement)
 {
-	const elements = document.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>("input, select, textarea");
+	const elements = form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>("input, select, textarea");
 
 	for (const element of elements)
 	{
@@ -66,9 +66,9 @@ export function addInputChangeListeners()
 	}
 }
 
-export function commitInputValues()
+export function commitInputValues(form: HTMLFormElement)
 {
-	const elements = document.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>("input, select, textarea");
+	const elements = form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>("input, select, textarea");
 
 	for (const element of elements)
 	{
