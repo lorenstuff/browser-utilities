@@ -308,7 +308,7 @@ export function getInputStringValue(inputSelectOrTextArea: HTMLInputElement | HT
 {
 	if (!allowBlank && inputSelectOrTextArea.value.trim() == "")
 	{
-		throw new Error("Input, select or textareapassed to getInputStringValue has no value, make it required, pass true for allowBlank or use getInputStringValueNullable.");
+		throw new Error("Input, select or textarea passed to getInputStringValue has no value, make it required, pass true for allowBlank or use getInputStringValueNullable.");
 	}
 
 	return inputSelectOrTextArea.value.trim();
