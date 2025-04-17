@@ -123,7 +123,7 @@ export function getInputDateValue(input: HTMLInputElement)
 
 	if (input.value.trim() == "")
 	{
-		throw new Error("Input passed to getInputDateValue has no value, consider making it required.");
+		throw new Error("Input passed to getInputDateValue has no value, make it required or use getInputDateValueNullable.");
 	}
 
 	return DateTime.fromISO(input.value);
@@ -173,7 +173,7 @@ export function getInputDateTimeValue(input: HTMLInputElement)
 
 	if (input.value.trim() == "")
 	{
-		throw new Error("Input passed to getInputDateTimeValue has no value, consider making it required.");
+		throw new Error("Input passed to getInputDateTimeValue has no value, make it required or use getInputDateTimeValueNullable.");
 	}
 
 	return input.value.trim();
@@ -223,7 +223,7 @@ export function getInputNumberValue(inputOrSelect: HTMLInputElement | HTMLSelect
 
 	if (inputOrSelect.value.trim() == "")
 	{
-		throw new Error("Input passed to getInputNumberValue has no value, consider making it required.");
+		throw new Error("Input passed to getInputNumberValue has no value, make it required or use getInputNumberValueNullable.");
 	}
 
 	return z.coerce.number().parse(inputOrSelect.value);
@@ -304,11 +304,11 @@ export function getChangedInputEnumValueNullable<T extends [ string, ...string[]
 	return getInputEnumValueNullable(select, zodEnum);
 }
 
-export function getInputStringValue(inputSelectOrTextArea: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement)
+export function getInputStringValue(inputSelectOrTextArea: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement, allowBlank = false)
 {
-	if (inputSelectOrTextArea.value.trim() == "")
+	if (!allowBlank && inputSelectOrTextArea.value.trim() == "")
 	{
-		throw new Error("Input, select or textareapassed to getInputStringValue has no value, consider making it required.");
+		throw new Error("Input, select or textareapassed to getInputStringValue has no value, make it required, pass true for allowBlank or use getInputStringValueNullable.");
 	}
 
 	return inputSelectOrTextArea.value.trim();
