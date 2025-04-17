@@ -118,12 +118,12 @@ export function getInputDateValue(input: HTMLInputElement)
 {
 	if (input.type != "date")
 	{
-		throw new Error("Input passed to getDateValue is not the correct type: " + input.type);
+		throw new Error("Input passed to getInputDateValue is not the correct type: " + input.type);
 	}
 
-	if (!input.required)
+	if (input.value.trim() == "")
 	{
-		throw new Error("Input passed to getDateValue is not required.");
+		throw new Error("Input passed to getInputDateValue has no value, consider making it required.");
 	}
 
 	return DateTime.fromISO(input.value);
@@ -143,7 +143,7 @@ export function getInputDateValueNullable(input: HTMLInputElement)
 {
 	if (input.type != "date")
 	{
-		throw new Error("Input passed to getDateValue is not the correct type: " + input.type);
+		throw new Error("Input passed to getInputDateValueNullable is not the correct type: " + input.type);
 	}
 
 	if (input.value.trim() == "")
@@ -168,12 +168,12 @@ export function getInputDateTimeValue(input: HTMLInputElement)
 {
 	if (input.type != "datetime-local")
 	{
-		throw new Error("Input passed to getDateTimeValue is not the correct type: " + input.type);
+		throw new Error("Input passed to getInputDateTimeValue is not the correct type: " + input.type);
 	}
 
-	if (!input.required)
+	if (input.value.trim() == "")
 	{
-		throw new Error("Input passed to getDateTimeValue is not required.");
+		throw new Error("Input passed to getInputDateTimeValue has no value, consider making it required.");
 	}
 
 	return input.value.trim();
@@ -193,7 +193,7 @@ export function getInputDateTimeValueNullable(input: HTMLInputElement)
 {
 	if (input.type != "datetime-local")
 	{
-		throw new Error("Input passed to getDateTimeValue is not the correct type: " + input.type);
+		throw new Error("Input passed to getInputDateTimeValueNullable is not the correct type: " + input.type);
 	}
 
 	if (input.value.trim() == "")
@@ -218,12 +218,12 @@ export function getInputNumberValue(inputOrSelect: HTMLInputElement | HTMLSelect
 {
 	if (inputOrSelect.tagName == "INPUT" && inputOrSelect.type != "number")
 	{
-		throw new Error("Input or select passed to getNumberValue is not the correct type: " + inputOrSelect.type);
+		throw new Error("Input or select passed to getInputNumberValue is not the correct type: " + inputOrSelect.type);
 	}
 
-	if (!inputOrSelect.required)
+	if (inputOrSelect.value.trim() == "")
 	{
-		throw new Error("Input or select passed to getNumberValue is not required.");
+		throw new Error("Input passed to getInputNumberValue has no value, consider making it required.");
 	}
 
 	return z.coerce.number().parse(inputOrSelect.value);
@@ -243,7 +243,7 @@ export function getInputNumberValueNullable(inputOrSelect: HTMLInputElement | HT
 {
 	if (inputOrSelect.tagName == "INPUT" && inputOrSelect.type != "number")
 	{
-		throw new Error("Input or select passed to getNumberValueNullable is not the correct type: " + inputOrSelect.type);
+		throw new Error("Input or select passed to getInputNumberValueNullable is not the correct type: " + inputOrSelect.type);
 	}
 
 	if (inputOrSelect.value.trim() == "")
@@ -266,9 +266,9 @@ export function getChangedInputNumberValueNullable(inputOrSelect: HTMLInputEleme
 
 export function getInputEnumValue<T extends [ string, ...string[] ]>(select: HTMLSelectElement, zodEnum: z.ZodEnum<T>)
 {
-	if (!select.required)
+	if (select.value.trim() == "")
 	{
-		throw new Error("Select passed to getEnumValue is not required.");
+		throw new Error("Select passed to getInputEnumValue has no value, consider making it required.");
 	}
 
 	return zodEnum.parse(select.value);
@@ -306,9 +306,9 @@ export function getChangedInputEnumValueNullable<T extends [ string, ...string[]
 
 export function getInputStringValue(inputSelectOrTextArea: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement)
 {
-	if (!inputSelectOrTextArea.required)
+	if (inputSelectOrTextArea.value.trim() == "")
 	{
-		throw new Error("Input, select or textarea passed to getStringValue is not required.")
+		throw new Error("Input, select or textareapassed to getInputStringValue has no value, consider making it required.");
 	}
 
 	return inputSelectOrTextArea.value.trim();
