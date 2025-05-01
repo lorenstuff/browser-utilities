@@ -1,12 +1,5 @@
 # Browser Utilities
-A collection of various browser utility functions.
-
-## Installation
-Install the package and its peer dependencies with NPM:
-
-```
-npm install @types/luxon luxon zod @donutteam/utilities
-```
+A collection of various utility functions for use in the browser.
 
 ## License
 [MIT](https://github.com/donutteam/browser-utilities/blob/main/LICENSE.md)
