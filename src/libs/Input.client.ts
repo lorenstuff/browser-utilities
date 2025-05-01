@@ -3,7 +3,7 @@
 //
 
 import { DateTime } from "luxon";
-import z from "zod";
+import { z } from "zod";
 
 import { getBooleanData } from "./Element.client.js";
 
