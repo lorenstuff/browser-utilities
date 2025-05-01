@@ -1,4 +1,8 @@
 # Changelog
+## 2.1.5
+
+* docs: updated package description
+
 ## 2.1.4
 
 * fix: fixed a typo
