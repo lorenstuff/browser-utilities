@@ -1,6 +1,6 @@
 {
 	"name": "@lorenstuff/browser-utilities",
-	"version": "2.1.4",
+	"version": "2.1.5",
 	"description": "A collection of various utility functions for use in the browser.",
 	"author": "Loren Goodwin",
 	"license": "MIT",
