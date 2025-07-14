@@ -1,4 +1,8 @@
 # Changelog
+## 2.1.6
+
+* fix: allow hidden type inputs to be passed to getInputNumber functions
+
 ## 2.1.5
 
 * docs: updated package description

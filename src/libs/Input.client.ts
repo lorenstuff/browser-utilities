@@ -216,7 +216,11 @@ export function getChangedInputDateTimeValueNullable(input: HTMLInputElement)
 
 export function getInputNumberValue(inputOrSelect: HTMLInputElement | HTMLSelectElement)
 {
-	if (inputOrSelect.tagName == "INPUT" && inputOrSelect.type != "number")
+	if
+	(
+		inputOrSelect.tagName == "INPUT" &&
+		(inputOrSelect.type != "hidden" && inputOrSelect.type != "number")
+	)
 	{
 		throw new Error("Input or select passed to getInputNumberValue is not the correct type: " + inputOrSelect.type);
 	}
@@ -241,7 +245,11 @@ export function getChangedInputNumberValue(inputOrSelect: HTMLInputElement | HTM
 
 export function getInputNumberValueNullable(inputOrSelect: HTMLInputElement | HTMLSelectElement)
 {
-	if (inputOrSelect.tagName == "INPUT" && inputOrSelect.type != "number")
+	if
+	(
+		inputOrSelect.tagName == "INPUT" &&
+		(inputOrSelect.type != "hidden" && inputOrSelect.type != "number")
+	)
 	{
 		throw new Error("Input or select passed to getInputNumberValueNullable is not the correct type: " + inputOrSelect.type);
 	}
