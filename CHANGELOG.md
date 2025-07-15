@@ -1,4 +1,8 @@
 # Changelog
+## 2.1.7
+
+* refactor: removed input type checks after further consideration
+
 ## 2.1.6
 
 * fix: allow hidden type inputs to be passed to getInputNumber functions
